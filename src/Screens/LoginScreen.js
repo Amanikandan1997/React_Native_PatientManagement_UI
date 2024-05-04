@@ -15,51 +15,54 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import md4now from "../../assets/md4now.png";
+import axios from 'axios'; // Import Axios
+
+
 
 const LoginScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const validateEmail = () => {
-    // Basic email validation
-    if (!email) {
-      Alert.alert("Validation Error", "Email field cannot be empty.");
-      return false;
-    }
-
-    // Additional email validation can be added here
-    return true;
-  };
-
-  const validatePassword = () => {
-    // Basic password validation
-    if (!password) {
-      Alert.alert("Validation Error", "Password field cannot be empty.");
-      return false;
-    }
-
-    // Additional password validation can be added here
-    return true;
-  };
-
   const handleLogin = () => {
-    // Perform email and password validation
-    const isEmailValid = validateEmail();
-    const isPasswordValid = validatePassword();
+    // Make sure both email and password are entered
+  //   if (!email || !password) {
+  //     Alert.alert('Error', 'Please enter both email and password');
+  //     return;
+  //   }
 
-    if (isEmailValid && isPasswordValid) {
-      // Perform login logic
-      // Example:
-      console.log("Email:", email);
-      console.log("Password:", password);
+  //   // Dummy API URL
+  //   const apiUrl = 'https://26c71b4308494f8da5266cb14ad0336e.api.mockbin.io/';
 
-      // After successful login, navigate to the desired screen
-      navigation.navigate("profile");
-    }
+  //   // Send login request
+  //   axios.get(apiUrl, { email, password })
+  //     .then(response => {
+  //       // Handle successful login response here
+  //       console.log('Login successful:', response.data);
+  //       navigation.navigate("verify");
+      
+  //       // You can navigate to another screen or do something else here
+  //     })
+  //     .catch(error => {
+  //       // Handle login error
+  //       console.error('Login error:', error);
+  //       Alert.alert('Error', 'Login failed. .');
+  //     });
+
+
+
+   // Check if the entered credentials are correct
+   if (email === "admin" && password === "1234") {
+    // Navigate to the profile screen
+    navigation.navigate("profile");
+  } else {
+    // If the credentials are incorrect, show an error message
+    Alert.alert('Error', 'Invalid email or password. Please try again.');
+  }
   };
 
   return (
+  
     <View style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}>
       <StatusBar barStyle="dark-content" />
       <View>
@@ -195,6 +198,7 @@ const LoginScreen = () => {
         </Pressable>
       </KeyboardAvoidingView>
     </View>
+   
   );
 };
 

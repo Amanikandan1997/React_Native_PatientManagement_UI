@@ -12,6 +12,7 @@ import Notification from './src/Pages/Notification';
 import Insurance from './src/Pages/Insurance';
 import Payment from './src/Pages/Payment';
 import Refer from './src/Pages/Refer';
+import Appoinment from './src/Screens/Appoinment';
 
 
 
@@ -26,6 +27,7 @@ export default function App() {
         <Stack.Screen name="Reg" component={RegisterScreen}   options={{ headerShown: false }} />
         <Stack.Screen name="profile" component={Profilescreen}   options={{ headerShown: false, headerTitle: 'Patient Dashboard'  }} />
         <Stack.Screen name="Verify" component={VerifyScreen}   options={{ headerShown: true , headerTitle: '' }} />
+        <Stack.Screen name="app" component={Appoinment}   options={{ headerShown: true , headerTitle: 'Appoinment Details' }} />
        
 
           

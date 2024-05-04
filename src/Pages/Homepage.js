@@ -24,8 +24,8 @@ const Homepage = () => {
      </View>
 
      <View>
-      <Text style={{ fontWeight:"600",fontSize:20,paddingRight:130}}>Quick Link</Text>
-      <Text style={{ color: "gray",paddingRight:130}}>Here's an overview of your account list.</Text>
+      <Text style={{ fontWeight:"600",fontSize:20,paddingRight:130, marginLeft:7}}>Quick Link</Text>
+      <Text style={{ color: "gray",paddingRight:130, marginLeft:7}}>Here's an overview of your account list.</Text>
       <View style={{display:"flex", flexDirection:"row", padding:3}}>
       <Card style={{width:"29%", margin:8,height:"80%", backgroundColor:"white"}}>
     <Card.Content>
@@ -51,16 +51,18 @@ Appointments</Text>
   </View>
 
   <View style={{flexDirection:"row", justifyContent:"space-between"}}>
-  <Text style={{ fontWeight:"600",fontSize:20 }}>Your Doctor</Text>
+  <Text style={{ fontWeight:"600",fontSize:20, marginLeft:8}}>Your Doctor</Text>
   <Pressable
           
           style={{
             width: 180,
+            marginRight:10,
             height:35,
             backgroundColor: "#1e90ff",
-            borderRadius: 12,
+            borderRadius: 18,
            
           }}
+          onPress={() => navigation.navigate("app")}
         >
           <Text style={{ textAlign: "center", color: "white", fontSize: 16, fontWeight: "bold",padding:5 }}>View Doctor Profile</Text>
         </Pressable>
@@ -114,7 +116,9 @@ const styles = StyleSheet.create({
   avatar: {
     marginRight: 10,
     borderRadius: 50,
-    backgroundColor: 'lightgray'
+    backgroundColor: 'lightgray',
+    borderColor:"#1e90ff",
+    borderWidth:2
   },
   userInfo: {
     justifyContent: 'center',
